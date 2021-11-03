@@ -27,9 +27,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/css/fontawesome.css",
+              "src/assets/css/tooplate-main.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/flex-slider.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/vendor/jquery/jquery.min.js",
+              "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/owl.js",
+              "src/assets/js/isotope.js",
+              "src/assets/js/flex-slider.js"
+            ]
           },
           "configurations": {
             "production": {
