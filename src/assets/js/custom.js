@@ -35,7 +35,7 @@ jQuery( document ).ready(function( $ ) {
 		      columnWidth: '.col-sm-3'
 		    });
 		  });
-		  
+
 		  $container.isotope({ filter: '*' });
 
 		    // filter items on button click
@@ -54,7 +54,7 @@ jQuery( document ).ready(function( $ ) {
 		    itemMargin: 5,
 		    asNavFor: '#slider'
 		});
-		 
+
 		$('#slider').flexslider({
 		    animation: "slide",
 		    controlNav: false,
@@ -62,5 +62,5 @@ jQuery( document ).ready(function( $ ) {
 		    slideshow: false,
 		    sync: "#carousel"
 		});
- 
+
 });

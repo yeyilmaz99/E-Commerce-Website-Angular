@@ -29,10 +29,8 @@
             "styles": [
               "src/styles.css",
               "src/vendor/bootstrap/css/bootstrap.min.css",
-              "src/assets/css/fontawesome.css",
               "src/assets/css/tooplate-main.css",
-              "src/assets/css/owl.css",
-              "src/assets/css/flex-slider.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "src/vendor/jquery/jquery.min.js",
