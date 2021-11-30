@@ -34,61 +34,119 @@
         </div>
       </div>
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li style="background-color: #5c86cb;" data-target="#carouselExampleIndicators" data-slide-to="0"
-            class="active"></li>
-          <li style="background-color: #5c86cb;" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li style="background-color: #5c86cb;" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" style="background-color: #5c86cb;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active btnmt" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" style="background-color: #5c86cb;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="btnmt" aria-label="Slide 2"></button>
+          <button type="button" style="background-color: #5c86cb;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="btnmt" aria-label="Slide 3"></button>
+        </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="card-group">
-              <div class="card-deck">
-                <div *ngFor="let product of products.slice(0, 4)" class="card mb-5">
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}} </p>
-                  </div>
-                  <div class="card-footer">
-                    <strong >{{product.price}}</strong>
+
+
+
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div *ngFor="let product of products.slice(0,4)" class="col mb-5">
+                  <div class="card">
+                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">{{product.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                      <strong>{{product.price}}₺ </strong>
+                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- <div class="row">
+              <div *ngFor="let product of products.slice(0,4)" class="col-md-3">
+                <div class="card mb-5" >
+                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <hr>
+                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
           </div>
           <div class="carousel-item">
-            <div class="card-group">
-              <div class="card-deck">
-                <div *ngFor="let product of products.slice(4, 8)" class="card mb-5">
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}} </p>
-                  </div>
-                  <div class="card-footer">
-                    <strong >{{product.price}}</strong>
+
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div *ngFor="let product of products.slice(4,8)" class="col mb-5">
+                  <div class="card">
+                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">{{product.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                      <strong>{{product.price}}₺ </strong>
+                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- <div class="row">
+              <div *ngFor="let product of products.slice(4,8)" class="col-md-3">
+                <div class="card mb-5" >
+                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
           </div>
           <div class="carousel-item">
-            <div class="card-group">
-              <div class="card-deck">
-                <div *ngFor="let product of products.slice(8, 12)" class="card mb-5">
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}} </p>
-                  </div>
-                  <div class="card-footer">
-                    <strong >{{product.price}}</strong>
+
+
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
+                  <div class="card">
+                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">{{product.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                      <strong>{{product.price}}₺ </strong>
+                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- <div class="row">
+              <div *ngFor="let product of products.slice(8,12)" class="col-md-3">
+                <div class="card mb-5" >
+                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
           </div>
         </div>
       </div>

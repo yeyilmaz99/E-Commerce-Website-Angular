@@ -30,15 +30,12 @@
               "src/styles.css",
               "src/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/css/tooplate-main.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/vendor/bootstrap/css/bootstrap.min.css"
             ],
             "scripts": [
-              "src/vendor/jquery/jquery.min.js",
               "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/js/custom.js",
-              "src/assets/js/owl.js",
-              "src/assets/js/isotope.js",
-              "src/assets/js/flex-slider.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
