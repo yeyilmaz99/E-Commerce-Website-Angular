@@ -5,13 +5,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="caption">
-          <h2>Ecommerce HTML Template</h2>
+          <h2>E-Commerce Template</h2>
           <div class="line-dec"></div>
-          <p>Pixie HTML Template can be converted into your desired CMS theme. Total <strong>5 pages</strong> included.
-            You can use this Bootstrap v4.1.3 layout for any CMS.
-            <br><br>Please tell your friends about <a rel="nofollow"
-              href="https://www.facebook.com/tooplate/">Tooplate</a> free template site. Thank you. Photo credit goes to
-            <a rel="nofollow" href="https://www.pexels.com">Pexels website</a>.
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos esse itaque illum nulla dolor, nam saepe id maiores voluptatum repellendus sint. Officia ab repellendus provident?
+            <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, deserunt sint? Eum necessitatibus reiciendis dolorum.
           </p>
           <div class="main-button">
             <a href="#">Order Now!</a>
@@ -44,39 +41,24 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
 
-
-
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div *ngFor="let product of products.slice(0,4)" class="col mb-5">
-                  <div class="card">
-                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">{{product.description}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <strong>{{product.price}}₺ </strong>
-                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
-                    </div>
+                <div *ngFor="let product of products.slice(0,4)"     class="col mb-5">
+                  <div routerLink='/detail/{{product.id}}' class="card">
+                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <strong>{{product.price}}₺ </strong>
+                        <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div *ngFor="let product of products.slice(0,4)" class="col-md-3">
-                <div class="card mb-5" >
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}}</p>
-                    <hr>
-                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
           </div>
           <div class="carousel-item">
@@ -84,33 +66,21 @@
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products.slice(4,8)" class="col mb-5">
-                  <div class="card">
-                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">{{product.description}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <strong>{{product.price}}₺ </strong>
-                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
-                    </div>
+                  <div routerLink='/detail/{{product.id}}' class="card">
+                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <strong>{{product.price}}₺ </strong>
+                        <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div *ngFor="let product of products.slice(4,8)" class="col-md-3">
-                <div class="card mb-5" >
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}}</p>
-                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
           </div>
           <div class="carousel-item">
@@ -119,33 +89,21 @@
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
-                  <div class="card">
-                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">{{product.description}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <strong>{{product.price}}₺ </strong>
-                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
-                    </div>
+                  <div routerLink='/detail/{{product.id}}' class="card">
+                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <strong>{{product.price}}₺ </strong>
+                        <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div *ngFor="let product of products.slice(8,12)" class="col-md-3">
-                <div class="card mb-5" >
-                  <img src="assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}}</p>
-                    <span> <strong>{{product.price}}₺</strong><a href="#" class="btn btn-primary">Add To Cart</a></span>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
           </div>
         </div>
@@ -166,13 +124,12 @@
       <div class="col-md-12">
         <div class="section-heading">
           <div class="line-dec"></div>
-          <h1>Subscribe on PIXIE now!</h1>
+          <h1>Subscribe Now!</h1>
         </div>
       </div>
       <div class="col-md-8 offset-md-2">
         <div class="main-content">
-          <p>Integer vel turpis ultricies, lacinia ligula id, lobortis augue. Vivamus porttitor dui id dictum efficitur.
-            Phasellus vel interdum elit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eligendi labore reiciendis ipsum officiis odio inventore mollitia beatae. Earum, beatae?</p>
           <div class="container">
             <form id="subscribe" action="" method="get">
               <div class="row">

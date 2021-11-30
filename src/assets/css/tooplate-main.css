@@ -307,13 +307,13 @@ a {
 	color: #3a8bcd;
 	text-decoration: none;
 }
-.footer .social-icons {
+/* .footer .social-icons {
 	margin-bottom: 60px;
 }
 .footer .social-icons ul li {
 	margin: 0px 10px;
-}
-.footer .social-icons a {
+} */
+/* .footer .social-icons a {
 	width: 32px;
 	height: 32px;
 	color: #fff;
@@ -327,7 +327,7 @@ a {
 }
 .footer .social-icons a:hover {
 	background-color: #3a8bcd;
-}
+} */
 
 /* Sub Footer Style */
 .sub-footer {
@@ -525,7 +525,7 @@ a {
 	margin-left: 4px;
 	transition: all 0.5s;
 }
-.single-product .right-content .down-content span a:hover {
+/* .single-product .right-content .down-content span a:hover {
 	color: #3a8bcd;
 }
 .single-product .right-content .down-content span a:hover i {
@@ -543,7 +543,7 @@ a {
 	color: #fff;
 	font-size: 12px;
 	margin-right: 5px;
-}
+} */
 .single-product .right-content .down-content .categories {
 	border-top: 1px solid #eee;
 	margin-top: 30px;
@@ -579,7 +579,7 @@ a {
 	display: inline-block;
 	margin-left: 8px;
 }
-.about-page .right-content span a i {
+/* .about-page .right-content span a i {
 	transition: all 0.5s;
 	background-color: #aaa;
 	width: 26px;
@@ -591,7 +591,7 @@ a {
 	color: #fff;
 	font-size: 12px;
 	margin-right: 5px;
-}
+} */
 .about-page .right-content .share {
 	margin-top: 20px;
 	border-top: 1px solid #eee;
@@ -602,9 +602,9 @@ a {
 	color: #4a4a4a;
 	font-weight: 400;
 }
-.about-page .right-content span a:hover i {
+/* .about-page .right-content span a:hover i {
 	background-color: #3a8bcd;
-}
+} */
 
 
 
@@ -634,7 +634,7 @@ a {
 	display: inline-block;
 	margin-left: 8px;
 }
-.contact-page .right-content span a i {
+/* .contact-page .right-content span a i {
 	transition: all 0.5s;
 	background-color: #aaa;
 	width: 26px;
@@ -646,7 +646,7 @@ a {
 	color: #fff;
 	font-size: 12px;
 	margin-right: 5px;
-}
+} */
 .contact-page .right-content .share {
 	margin-top: 30px;
 	border-top: 1px solid #eee;
@@ -657,9 +657,9 @@ a {
 	color: #4a4a4a;
 	font-weight: 400;
 }
-.contact-page .right-content span a:hover i {
+/* .contact-page .right-content span a:hover i {
 	background-color: #3a8bcd;
-}
+} */
 .contact-page .right-content .button {
 	cursor: pointer;
 	background-color: #3a8bcd;

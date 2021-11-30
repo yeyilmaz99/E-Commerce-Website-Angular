@@ -1,0 +1,13 @@
+fa-icon{
+    color: #5c86cb;
+    font-size: x-large;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.socials{
+    margin-bottom: 50px;
+}
+a:hover fa-icon
+{
+    color: cornflowerblue;
+}

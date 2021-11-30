@@ -7,6 +7,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit  {
+  selectedProduct:Product;
 
   products:Product[];
   constructor(private productService:ProductService) { }
@@ -15,7 +16,15 @@ export class HomeComponent implements OnInit  {
    this.getProducts()
   }
   getProducts():void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts()
+        .subscribe(products=> {
+          this.products = products;
+        });
+  }
+
+  onSelect(product:Product):void{
+    this.selectedProduct = product
+    console.log("productid"+product.id)
   }
 
 }

@@ -9,8 +9,9 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[]
-  productSlice:Product[]
+  selectedProduct:Product;
+  products: Product[];
+  productSlice:Product[];
   length = 100;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
@@ -22,7 +23,10 @@ export class ProductsComponent implements OnInit {
   }
 
   getProducts():void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts()
+      .subscribe(products =>{
+        this.products = products;
+      });
     this.productSlice = this.products.slice(0,12)
   }
   OnPageChange(event:PageEvent) {
@@ -32,6 +36,10 @@ export class ProductsComponent implements OnInit {
       endIndex = this.products.length;
     }
     this.productSlice = this.products.slice(startIndex, endIndex);
+  }
+  onSelect(product:Product):void{
+    this.selectedProduct = product
+    console.log("productid"+product.id)
   }
 
 

@@ -1,0 +1,16 @@
+.social-links{
+    font-size: large;
+    
+}
+fa-icon{
+    color: #5c86cb;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+a:hover fa-icon
+{
+    color: cornflowerblue;
+}
+.categories a:hover {
+    color: #5c86cb;
+}
