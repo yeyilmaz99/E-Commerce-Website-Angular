@@ -1,0 +1,45 @@
+.priceTL{
+    font-size:xx-large ;
+}
+
+.selectedItems{
+    color: #5c86cb;
+    font-size: medium;
+}
+.checkout{
+    border-color:#5c86cb ;
+    background-color: #5c86cb;
+    width: 180px;
+
+}
+.discount{
+    border-color:#5c86cb ;
+    background-color: #5c86cb;
+    width: 180px;
+    text-transform: uppercase;
+}
+fa-icon{
+    float: right;
+    margin-right: 5px;
+    color: #5c86cb;
+    text-shadow: grey;
+    padding-top: 5px;
+}
+
+a:hover fa-icon  {
+    color: red;
+}
+.colm{
+    width: 13%;
+}
+.prds{
+    margin-top: 20px;
+    text-transform: lowercase;
+}
+.img{
+    max-width: 200%;
+    max-height: 100%;
+}
+.card-body{
+    margin-left: 10%;
+}

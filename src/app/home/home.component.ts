@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit  {
 
   onSelect(product:Product):void{
     this.selectedProduct = product
-    console.log("productid"+product.id)
   }
 
 }

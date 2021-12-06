@@ -1,111 +1,168 @@
+<!-- Page Content -->
+<!-- Single Starts Here -->
+<div class="single-product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" *ngIf="product">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Single Product</h1>
+        </div>
+      </div>
+    </div>
 
-
-
-        <!-- Page Content -->
-    <!-- Single Starts Here -->
-    <div class="single-product">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12"*ngIf="product">
-              <div class="section-heading">
-                <div class="line-dec"></div>
-                <h1>Single Product</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
               </div>
             </div>
-          </div>
-  
-            <div class="container">
-              <div class="row">
-                  <div class="col-md-6">
-                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span style="background-color: #5c86cb; border-radius: 50px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button  class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span style="background-color: #5c86cb; border-radius: 50px;" class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                  </div>
-  
-                  <div class="col-md-6">
-                    <div class="right-content">
-                      <h4>{{product.name}}</h4>
-                      <h6>{{product.price}} ₺</h6>
-                      <p>Description: {{product.description}}</p>
-                      <span>7 left on stock</span>
-                      <form action="" method="get">
-                        <label for="quantity">Quantity:</label>
-                        <input name="quantity" type="quantity" class="quantity-text" id="quantity"
-                            onfocus="if(this.value == '1') { this.value = ''; }"
-                            onBlur="if(this.value == '') { this.value = '1';}"
-                            value="1">
-                        <input type="submit" class="button" value="Order Now!">
-                      </form>
-                      <div class="down-content">
-                        <div class="categories">
-                          <h6>Category: <span><a href="#">Pants</a>,<a href="#">Women</a>,<a href="#">Lifestyle</a></span></h6>
-                        </div>
-                        <div class="share">
-                          <div class="socials">
-                            <h6>Share:
-                              <span><ul class="social-links">
-                              <a href=""><fa-icon [icon]="faFacebook"></fa-icon></a>
-                              <a href=""><fa-icon [icon]="faTwitter"></fa-icon></a>
-                              <a href=""><fa-icon [icon]="faInstagram"></fa-icon></a>
-                              <a href=""><fa-icon [icon]="faLinkedIn"></fa-icon></a>
-                            </ul></span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-  
-  
-  
-  
-  
-  
-              </div>
-          </div>
-            
-  
-  
-  
-  
-  
-  
-  
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
+              <span style="background-color: #5c86cb; border-radius: 50px;" class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
+              <span style="background-color: #5c86cb; border-radius: 50px;" class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
-      <!-- Single Page Ends Here -->
-  
-  
-      <!-- Similar Starts Here -->
-      <div class="featured-items">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="section-heading">
-                <div class="line-dec"></div>
-                <h1>You May Also Like</h1>
+
+        <div class="col-md-6">
+          <div class="right-content">
+            <h4>{{product.name}}</h4>
+            <h6>{{product.price}} ₺</h6>
+            <p>Description: {{product.description}}</p>
+            <span>7 left on stock</span>
+            <form action="" method="get">
+              <label for="quantity">Quantity:</label>
+              <input name="quantity" type="quantity" class="quantity-text" id="quantity"
+                onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
+                value="1">
+              <input type="submit" class="button" value="Order Now!">
+            </form>
+            <div class="down-content">
+              <div class="categories">
+                <h6>Category: <span><a href="#">Pants</a>,<a href="#">Women</a>,<a href="#">Lifestyle</a></span></h6>
+              </div>
+              <div class="share">
+                <div class="socials">
+                  <h6>Share:
+                    <span>
+                      <ul class="social-links">
+                        <a href="">
+                          <fa-icon [icon]="faFacebook"></fa-icon>
+                        </a>
+                        <a href="">
+                          <fa-icon [icon]="faTwitter"></fa-icon>
+                        </a>
+                        <a href="">
+                          <fa-icon [icon]="faInstagram"></fa-icon>
+                        </a>
+                        <a href="">
+                          <fa-icon [icon]="faLinkedIn"></fa-icon>
+                        </a>
+                        <!-- <a href="">
+                          <fa-icon [icon]="faCartPlus"></fa-icon>
+                        </a> -->
+                      </ul>
+                    </span>
+                  </h6>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Single Page Ends Here -->
+
+
+<!-- Similar Starts Here -->
+<div class="featured-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>You May Also Like</h1>
+
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+              <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
+                <div routerLink='/detail/{{product.id}}' class="card">
+                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">{{product.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                      <strong>{{product.price}}₺ </strong>
+                      <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Subscribe on PIXIE now!</h1>
+        </div>
+      </div>
+      <div class="col-md-8 offset-md-2">
+        <div class="main-content">
+          <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
+            celiac readymade vice.</p>
+          <div class="container">
+            <form id="subscribe" action="" method="get">
+              <div class="row">
+                <div class="col-md-7">
+                  <fieldset>
+                    <input name="email" type="text" class="form-control" id="email"
+                      onfocus="if(this.value == 'Your Email...') { this.value = ''; }"
+                      onBlur="if(this.value == '') { this.value = 'Your Email...';}" value="Your Email..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-5">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-      <!-- Similar Ends Here -->
-  
+    </div>
+  </div>
+</div>
+<!-- Similar Ends Here -->

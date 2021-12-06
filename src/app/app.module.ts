@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AboutComponent,
     ContactComponent,
     ProductsComponent,
-    DetailComponent
+    DetailComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     MatPaginatorModule,
