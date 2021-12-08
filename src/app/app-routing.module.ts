@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'detail/:id', component: DetailComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path:'stepper', component: StepperComponent }
 ]
 
 
