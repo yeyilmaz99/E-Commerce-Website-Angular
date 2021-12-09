@@ -1,0 +1,146 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+  
+        <mat-stepper [linear]="isLinear" #stepper>
+  
+          <mat-step [completed]="false" [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+  
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Name</mat-label>
+                      <input matInput placeholder="First name" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Surname</mat-label>
+                      <input matInput placeholder="Surname" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+  
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>E-mail</mat-label>
+                      <input matInput placeholder="E-Mail" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Birthday</mat-label>
+                      <input matInput [matDatepicker]="picker" formControlName="firstCtrl" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+  
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Phone</mat-label>
+                      <input type="tel" matInput placeholder="Phone" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+  
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                      <mat-checkbox>Check me!</mat-checkbox>
+                      <mat-checkbox>Disabled</mat-checkbox>
+                  </div>
+                </div>
+              </div>
+  
+              <div>
+                <button class="btn" mat-button matStepperNext>Next</button>
+              </div>
+  
+  
+            </form>
+          </mat-step>
+  
+          <mat-step [completed]="false" [stepControl]="secondFormGroup" label="Fill out your address">
+            <form [formGroup]="secondFormGroup">
+              <div class="container">
+  
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Address Title</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+  
+                <div class="row justify-content-center">
+                  <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>City</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Ex. New York" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>District</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Ex. New York, NY" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Street</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Main St" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Apartment</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Ex. 1" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Address</mat-label>
+                      <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+  
+  
+  
+  
+  
+              <div>
+                <button class="btn" mat-button matStepperPrevious>Back</button>
+                <button class="btn" mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+          <mat-step [completed]="false">
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button class="btn" mat-button matStepperPrevious>Back</button>
+              <button class="btn" mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+  
+        </mat-stepper>
+  
+  
+  
+      </div>
+    </div>
+  </div>
