@@ -14,3 +14,6 @@ a:hover fa-icon
 .categories a:hover {
     color: #5c86cb;
 }
+.card{
+    cursor: pointer;
+}

@@ -26,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './cart/cart.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     DetailComponent,
     CartComponent,
     StepperComponent,
+    OrderByPipe,
   ],
   imports: [
     BrowserModule,
