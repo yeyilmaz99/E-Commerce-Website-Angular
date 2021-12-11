@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../products/products.component';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -21,13 +21,25 @@ export class DetailComponent implements OnInit {
   products:Product[];
   @Input() product: Product
   constructor(
+    private router: Router,
     private productService: ProductService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.loadProducts();
     this.getProduct();
     this.getProducts();
+  }
+  
+  loadProducts():void{
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      this.getProduct();
+      this.getProducts();
+  });
   }
 
   getProduct(): void {

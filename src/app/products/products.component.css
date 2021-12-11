@@ -2,3 +2,6 @@ mat-paginator{
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.card{
+  cursor: pointer;
+}

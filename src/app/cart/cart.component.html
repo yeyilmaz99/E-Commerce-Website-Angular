@@ -7,14 +7,50 @@
               <div class="col-md-2 colm"><h1>Your Cart</h1></div>
               <div class="col-md-2 prds text-muted"><h6>3 product</h6></div>
             </div>
-
           </div>
-            <div *ngFor="let product of products.slice(0,3)" routerLink='/detail/{{product.id}}' class="card mt-3" style="max-height: 150px;">
-                <div class="row g-0">
-                  <div class="col-md-1">
-                    <img src="/assets/images/{{product.imageUrl}}"  class="img" alt="...">
+
+            <div class="card mb-3 productCard" *ngFor="let product of products.slice(0,3)">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/assets/images/{{product.imageUrl}}" class="img-fluid card-img rounded" alt="...">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h3 class="card-text"><small class="text-muted">{{product.price}}₺</small></h3>
                   </div>
-                  <div class="col-md-10">
+                </div>
+                <div class="col-md-1">
+                  <a href="#"><fa-icon [icon]="faTimes" size="lg"></fa-icon></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div *ngFor="let product of products.slice(0,3)" routerLink='/detail/{{product.id}}' class="card mb-3" style="max-height: 150px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="/assets/images/{{product.imageUrl}}"  class="card-img img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-7">
                     <div  class="card-body">
                       <h5 class="card-title">{{product.name}}</h5>
                       <p class="card-text">{{product.description}}</p>
@@ -25,8 +61,19 @@
                     <a href="#"><fa-icon [icon]="faTimes" size="lg"></fa-icon></a>
                   </div>
                 </div>
-              </div>
+              </div> -->
+
+
+              <!-- <div class="row card" style="padding: 0px; margin: 0px;">
+                <div class="col-md-3">
+                  <img class="card-img" src="assets/images/product-01.jpg" alt="">
+                </div>
+                <div class="col-md-7"></div>
+                <div class="col-md-2"></div>
+              </div> -->
         </div>
+
+
         <div class="col-md-3">
                 <div class="card">
                   <div class="card-body">

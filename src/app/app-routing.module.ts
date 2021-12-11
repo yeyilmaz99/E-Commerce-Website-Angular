@@ -3,7 +3,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, } from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 import { StepperComponent } from './stepper/stepper.component';
@@ -17,9 +17,8 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'detail/:id', component: DetailComponent },
   { path: 'cart', component: CartComponent },
-  { path:'stepper', component: StepperComponent }
+  { path: 'stepper', component: StepperComponent }
 ]
-
 
 @NgModule({
   exports: [RouterModule],

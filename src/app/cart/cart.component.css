@@ -29,17 +29,42 @@ fa-icon{
 a:hover fa-icon  {
     color: red;
 }
-.colm{
-    width: 13%;
-}
+
 .prds{
     margin-top: 20px;
     text-transform: lowercase;
+}
+.btn{
+    max-width: 100%;
 }
 .img{
     max-width: 200%;
     max-height: 100%;
 }
-.card-body{
+/* .card-body{
     margin-left: 10%;
+} */
+
+.productCard{
+    max-width: 100%;
 }
+.img-fluid{
+    height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    fa-icon{
+        background-color: #5c86cb;
+        border: none;
+        position: relative;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        border-radius: 12px;
+        float: right;
+        margin-bottom: 20px;
+    }
+  }
