@@ -5,24 +5,24 @@
             <div class="line-dec"></div>
             <div class="row">
               <div class="col-md-2 colm"><h1>Your Cart</h1></div>
-              <div class="col-md-2 prds text-muted"><h6>3 product</h6></div>
+              <div class="col-md-2 prds text-muted"><h6>{{length()}} Products</h6></div>
             </div>
           </div>
 
-            <div class="card mb-3 productCard" *ngFor="let product of products.slice(0,3)">
+            <div class="card mb-3 productCard" *ngFor="let product of cartProducts">
               <div class="row g-0">
                 <div class="col-md-4">
                   <img src="/assets/images/{{product.imageUrl}}" class="img-fluid card-img rounded" alt="...">
                 </div>
                 <div class="col-md-7">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">description: {{product.description}} </p>
                     <h3 class="card-text"><small class="text-muted">{{product.price}}₺</small></h3>
                   </div>
                 </div>
                 <div class="col-md-1">
-                  <a href="#"><fa-icon [icon]="faTimes" size="lg"></fa-icon></a>
+                  <a (click)="delete(product)"><fa-icon [icon]="faTimes" size="lg"></fa-icon></a>
                 </div>
               </div>
             </div>
@@ -78,14 +78,24 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title selectedItems">SELECTED ITEMS</h5>
-                    <h6 class="priceTL">(price)₺</h6>
-                    <h6 class="priceDollar text-muted">(price)$</h6>
-                    <a href="#" class="btn btn-primary checkout">CHECKOUT</a>
+                    <h6 class="priceTL">{{totalPrice}}₺</h6>
+                    <h6 class="priceDollar text-muted"> {{totalPriceDollar}} $</h6>
+                    <a [routerLink]="['/stepper']" class="btn btn-primary checkout">CHECKOUT</a>
                     <hr>
-                    <p>Cargo: (cargo price)</p>
-                    <p>Items: (selecteditemlist)</p>
-                    <p>Total: (totalprice)</p>
-                    <a href="#" class="btn btn-primary discount">discount code</a>
+                    <p class="p">Cargo: {{cargoPrice}}$ </p>
+                    <p class="p">Items:</p>
+                    <ul class="p">
+                      <li class="itemsList" *ngFor="let product of cartProducts">
+                        <a routerLink='/detail/{{product.id}}'>{{product.name}}</a>
+                      </li>
+                    </ul>
+                    <p class="p">Total: {{totalPrice+10*15}}₺ </p>
+                    <p >{{totalPriceDollar+10}}$</p>
+                    <a (click)="discountClick()" class="btn btn-primary discount">discount code</a>
+                    <div *ngIf="discount" class="input-group mt-2">
+                      <input type="text" class="form-control">
+                      <button class="btn btn-outline-secondary" type="button">Add</button>
+                    </div>
                   </div>
                 </div>
         </div>
@@ -103,15 +113,15 @@
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
-                  <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
-                      <div class="card-body">
+                  <div class="card">
+                      <img routerLink='/detail/{{product.id}}' src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <div routerLink='/detail/{{product.id}}' class="card-body">
                         <h5 class="card-title">{{product.name}}</h5>
                         <p class="card-text">{{product.description}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
-                        <button style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                        <button (click)="saveToCart(product)" style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
                       </div>
                   </div>
                 </div>

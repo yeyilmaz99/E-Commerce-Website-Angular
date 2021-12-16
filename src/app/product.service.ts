@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  cartProducts:Product[]= [];
 
   constructor() { }
 
@@ -17,5 +18,10 @@ export class ProductService {
 
   getProduct(id:number): Observable<Product>{
     return of(ProductData.find(product => product.id === id));
+  }
+  addToCart(product:Product):void{
+    this.cartProducts.push(product);
+    console.log(this.cartProducts)
+    localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
   }
 }

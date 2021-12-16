@@ -1,7 +1,9 @@
 import { ProductService } from './../product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { OrderByPipe } from '../order-by.pipe';
+import { MatPaginator } from '@angular/material/paginator';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,6 +12,9 @@ import { OrderByPipe } from '../order-by.pipe';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+  faCartPlus = faCartPlus
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  cartProducts: Product[] = JSON.parse(localStorage.getItem("cartProducts"));
   selectedProduct:Product;
   products: Product[];
   productSlice:Product[];
@@ -44,17 +49,31 @@ export class ProductsComponent implements OnInit {
     this.selectedProduct = product
     console.log("productid"+product.id)
   }
+
+
   sortHigh(){
-    let newarr = this.productSlice.sort((a,b) =>a.price - b.price);
-    newarr= this.productSlice 
-  }
-  sortLow(){
-    let newarr1= this.productSlice.sort((a,b)=> b.price - a.price);
-    newarr1 = this.productSlice 
-  }
-  search(){
-    this.productSlice= this.order.transform(this.productSlice,'price','desc')
+    this.products= this.order.transform(this.products,'price','desc')
+    this.productSlice = this.products.slice(0,12);
     console.log(this.productSlice)
+    this.paginator.firstPage();
+  }
+
+  sortLow(){
+    this.products= this.order.transform(this.products,'price','asc')
+    this.productSlice = this.products.slice(0,12)
+    console.log(this.productSlice)
+    this.paginator.firstPage();
+  }
+
+  sortAll(){
+    this.products= this.order.transform(this.products,'id','asc')
+    this.productSlice = this.products.slice(0,12)
+    console.log(this.productSlice)
+    this.paginator.firstPage();
+  }
+  addToCart(product:Product){
+    this.productService.addToCart(product)
+    this.cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
   }
 
 

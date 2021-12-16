@@ -5,3 +5,13 @@ mat-paginator{
 .card{
   cursor: pointer;
 }
+
+.price{
+  font-weight: bolder;
+  font-size: large;
+  margin: auto;
+  width: 50%;
+}
+.card-footer{
+  cursor: default;
+}

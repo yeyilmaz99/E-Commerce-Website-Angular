@@ -10,11 +10,11 @@
           <div class="col-md-12">
             <div class="footer-menu">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/about']">Help</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">How It Works ?</a></li>
-                <li><a routerLinkActive="active" [routerLink]="['/about']">Contact Us</a></li>
+                <li><a [routerLink]="['/contact']">How It Works ?</a></li>
+                <li><a [routerLink]="['/about']">Contact Us</a></li>
               </ul>
             </div>
           </div>

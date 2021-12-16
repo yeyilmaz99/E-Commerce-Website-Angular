@@ -10,9 +10,9 @@ import { ProductData } from './products/products.datasource';
 })
 export class OrderByPipe implements PipeTransform {
   products = ProductData
-  transform(array: Product[] , sortBy: any, order?: any): any[] {
+  transform(value: Product[] , sortBy: any, order?: any): any[] {
     const sortOrder = order ? order : ''; // setting default ascending order
    
-     return orderBy(array, [sortBy], [sortOrder]);
+     return orderBy(value, [sortBy], [sortOrder]);
      }
    }

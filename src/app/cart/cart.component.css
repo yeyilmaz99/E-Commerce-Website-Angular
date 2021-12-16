@@ -68,3 +68,12 @@ a:hover fa-icon  {
         margin-bottom: 20px;
     }
   }
+
+.p{
+    margin-bottom: 3px;
+}
+.itemsList{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
