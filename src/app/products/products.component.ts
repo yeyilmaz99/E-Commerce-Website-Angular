@@ -73,7 +73,6 @@ export class ProductsComponent implements OnInit {
   }
   addToCart(product:Product){
     this.productService.addToCart(product)
-    this.cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
   }
 
 

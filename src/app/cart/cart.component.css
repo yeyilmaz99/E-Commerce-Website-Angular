@@ -3,27 +3,36 @@
 }
 
 .selectedItems{
-    color: #5c86cb;
+    color: #3a8bcd;
     font-size: medium;
 }
 .checkout{
-    border-color:#5c86cb ;
-    background-color: #5c86cb;
+    border-color:#3a8bcd ;
+    background-color: #3a8bcd;
     width: 180px;
 
 }
+.checkout:hover{
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
 .discount{
-    border-color:#5c86cb ;
-    background-color: #5c86cb;
+    border-color:#3a8bcd ;
+    background-color: #3a8bcd;
     width: 180px;
     text-transform: uppercase;
+}
+.discount:hover{
+    background-color: cornflowerblue;
+    border-color: cornflowerblue ;
 }
 fa-icon{
     float: right;
     margin-right: 5px;
-    color: #5c86cb;
+    color: #3a8bcd;
     text-shadow: grey;
     padding-top: 5px;
+    transition: 0.3s;
 }
 
 a:hover fa-icon  {
@@ -77,3 +86,29 @@ a:hover fa-icon  {
     list-style: none;
     color: black;
 }
+
+.productCard{
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.productCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.btnAddToCart{
+    background-color: #3a8bcd !important;
+    color: white;
+    border-color:#3a8bcd  ;
+    float: right;
+    transition: 0.3s;
+  }
+  .btnAddToCart:hover{
+    background-color: cornflowerblue !important;
+    color: white;
+  }
+  
+  

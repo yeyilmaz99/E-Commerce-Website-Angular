@@ -3,7 +3,7 @@
     
 }
 fa-icon{
-    color: #5c86cb;
+    color: #3a8bcd;
     border-radius: 50px;
     margin-right: 5px;
 }
@@ -16,4 +16,13 @@ a:hover fa-icon
 }
 .card{
     cursor: pointer;
+}
+#slideButton{
+    background-color: #3a8bcd !important;
+    border-radius: 50px;
+}
+.addToCartButton{
+    background-color: #3a8bcd;
+    float: right;
+    color: white;
 }

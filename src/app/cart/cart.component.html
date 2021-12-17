@@ -27,55 +27,11 @@
               </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <div *ngFor="let product of products.slice(0,3)" routerLink='/detail/{{product.id}}' class="card mb-3" style="max-height: 150px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="/assets/images/{{product.imageUrl}}"  class="card-img img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-7">
-                    <div  class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">{{product.description}}</p>
-                      {{product.price}}₺
-                    </div>
-                  </div>
-                  <div class="col-md-1">
-                    <a href="#"><fa-icon [icon]="faTimes" size="lg"></fa-icon></a>
-                  </div>
-                </div>
-              </div> -->
-
-
-              <!-- <div class="row card" style="padding: 0px; margin: 0px;">
-                <div class="col-md-3">
-                  <img class="card-img" src="assets/images/product-01.jpg" alt="">
-                </div>
-                <div class="col-md-7"></div>
-                <div class="col-md-2"></div>
-              </div> -->
         </div>
 
 
         <div class="col-md-3">
-                <div class="card">
+                <div class="card selectedItemsCard">
                   <div class="card-body">
                     <h5 class="card-title selectedItems">SELECTED ITEMS</h5>
                     <h6 class="priceTL">{{totalPrice}}₺</h6>
@@ -94,7 +50,7 @@
                     <a (click)="discountClick()" class="btn btn-primary discount">discount code</a>
                     <div *ngIf="discount" class="input-group mt-2">
                       <input type="text" class="form-control">
-                      <button class="btn btn-outline-secondary" type="button">Add</button>
+                      <button class="btn btn-outline-secondary btnAddToCart" type="button">Add</button>
                     </div>
                   </div>
                 </div>
@@ -121,7 +77,7 @@
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
-                        <button (click)="saveToCart(product)" style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+                        <button (click)="saveToCart(product)" class="btn btnAddToCart">Add To Cart</button>
                       </div>
                   </div>
                 </div>

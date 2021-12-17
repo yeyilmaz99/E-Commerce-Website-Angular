@@ -15,7 +15,9 @@
           <!-- <button class="btn btn-primary" data-filter=".new">Newest</button> -->
           <button class="btn btn-primary" (click)="sortLow()" data-filter=".low">Low Price</button>
           <button class="btn btn-primary" (click)="sortHigh()" data-filter=".high">Hight Price</button>
-          <a *ngIf="cartProducts.length>0" class="btn btn-primary" [routerLink]="['/cart']"><fa-icon [icon]="faCartPlus"></fa-icon>Go To Cart</a>
+          <div>
+            <a *ngIf="cartProducts" class="btn btn-primary" [routerLink]="['/cart']"><fa-icon [icon]="faCartPlus"></fa-icon>Go To Cart</a>
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,7 @@
           </div>
           <div class="card-footer">
             <strong class="price">{{product.price}}₺ </strong>
-            <button (click)="addToCart(product)" style="background-color: #5c86cb; float: right; color: white;" class="btn">Add To Cart</button>
+            <button (click)="addToCart(product)" style="background-color: #5c86cb; float: right; color: white;" class="btn btnAddToCart">Add To Cart</button>
           </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
   faInstagram = faInstagram;
   faLinkedIn= faLinkedin;
   faCartPlus= faCartPlus;
+  cartProducts: Product[] = JSON.parse(localStorage.getItem("cartProducts"));
   products:Product[];
   @Input() product: Product
   constructor(
@@ -53,6 +54,10 @@ export class DetailComponent implements OnInit {
       .subscribe(products =>{
         this.products = products;
       });
+  }
+  addToCart(product:Product){
+    this.productService.addToCart(product)
+    this.cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
   }
 
 }

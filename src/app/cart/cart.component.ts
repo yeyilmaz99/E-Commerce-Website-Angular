@@ -10,7 +10,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartProducts:Product[] = JSON.parse(localStorage.cartProducts)
+  cartProducts:Product[] = JSON.parse(localStorage.getItem('cartProducts'));
   products:Product[];
   faTimes= faTimes;
   totalPrice:number;
@@ -35,8 +35,8 @@ export class CartComponent implements OnInit {
       });
   }
   saveToCart(product:Product){
-    this.cartProducts.push(product);
-    localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
+    this.productService.addToCart(product)
+    this.cartProducts.push(product)
   }
   total():void{
     let total = 0;
@@ -54,10 +54,12 @@ export class CartComponent implements OnInit {
     for(let i= 0; i<this.cartProducts.length;i++){
       if( this.cartProducts[i].id === product.id ){
         this.cartProducts.splice(i, 1);
+        this.productService.cartProducts.splice(i, 1);
         localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
       }
     }
     this.total()
+    console.log(this.cartProducts);
   }
   discountClick(){
     this.discount = true;
