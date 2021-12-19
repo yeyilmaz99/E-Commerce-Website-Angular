@@ -15,9 +15,7 @@
           <!-- <button class="btn btn-primary" data-filter=".new">Newest</button> -->
           <button class="btn btn-primary" (click)="sortLow()" data-filter=".low">Low Price</button>
           <button class="btn btn-primary" (click)="sortHigh()" data-filter=".high">Hight Price</button>
-          <div>
-            <a *ngIf="cartProducts" class="btn btn-primary" [routerLink]="['/cart']"><fa-icon [icon]="faCartPlus"></fa-icon>Go To Cart</a>
-          </div>
+          <a [matBadge]="badgeContent" matBadgeColor="primary" class="btn btn-primary" [routerLink]="['/cart']">Cart<fa-icon [icon]="faCartPlus"></fa-icon></a>
         </div>
       </div>
     </div>

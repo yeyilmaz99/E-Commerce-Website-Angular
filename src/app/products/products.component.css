@@ -28,4 +28,7 @@ mat-paginator{
 .btnAddToCart:hover{
   background-color: cornflowerblue !important;
 }
+.mat-badge-content{
+  background : #3a8bcd;
+}
 

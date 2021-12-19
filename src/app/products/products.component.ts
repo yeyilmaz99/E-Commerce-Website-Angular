@@ -4,6 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { OrderByPipe } from '../order-by.pipe';
 import { MatPaginator } from '@angular/material/paginator';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 @Component({
@@ -22,10 +23,14 @@ export class ProductsComponent implements OnInit {
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageEvent: PageEvent;
+  badgeContent: number;
 
-  constructor(private productService:ProductService, 
-    private order:OrderByPipe
-    ) {}
+  constructor(
+    private productService:ProductService, 
+    private order:OrderByPipe,
+    ) {
+      this.badgeContent = this.cartProducts.length
+    }
   ngOnInit(): void {
     this.getProducts();
   }
@@ -72,9 +77,14 @@ export class ProductsComponent implements OnInit {
     this.paginator.firstPage();
   }
   addToCart(product:Product){
-    this.productService.addToCart(product)
+    this.productService.addToCart(product);
+    this.cartProducts= JSON.parse(localStorage.getItem("cartProducts"));
+    this.badgeContent = this.cartProducts.length;
+    Swal.fire('Whooa', 'Product has been added to cart', 'success');
   }
-
+  returnLength(){
+    return this.cartProducts.length
+  }
 
 }
 

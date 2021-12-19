@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="cartProducts.length>0" class="container">
     <div class="row">
         <div class="col-md-9">
           <div class="section-heading mt-0 mb-2">
@@ -57,6 +57,16 @@
         </div>
     </div>
 </div>
+<div *ngIf="noProducts" class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 emptyText">
+      <img class="gif" src="/assets/images/loader.gif" >
+      <h3 class="mb-3">Your cart is currently empty</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis neque quasi laborum quaerat! Molestias illum ut voluptates vitae, totam at.</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="featured-items">
     <div class="container">
@@ -76,7 +86,7 @@
                         <p class="card-text">{{product.description}}</p>
                       </div>
                       <div class="card-footer">
-                        <strong>{{product.price}}₺ </strong>
+                        <strong class="price">{{product.price}}₺ </strong>
                         <button (click)="saveToCart(product)" class="btn btnAddToCart">Add To Cart</button>
                       </div>
                   </div>

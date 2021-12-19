@@ -7,6 +7,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 @Component({
   selector: 'detail',
   templateUrl: './detail.component.html',
@@ -24,7 +26,7 @@ export class DetailComponent implements OnInit {
   constructor(
     private router: Router,
     private productService: ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +60,7 @@ export class DetailComponent implements OnInit {
   addToCart(product:Product){
     this.productService.addToCart(product)
     this.cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
+    Swal.fire('Whooa', 'Product has been added to cart', 'success');
   }
 
 }

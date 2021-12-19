@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../products/products.component';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'cart',
@@ -17,16 +18,19 @@ export class CartComponent implements OnInit {
   totalPriceDollar:number;
   cargoPrice:number = 10;
   discount:Boolean =false;
+  noProducts:boolean;
 
 
   constructor(
     private productService:ProductService,
-    private http:HttpClient
+    private http:HttpClient,
+    private toastr:ToastrService
   ) { }
 
   ngOnInit(): void {
     this.getProducts();
     this.total();
+    this.isEmpty();
   }
   getProducts():void{
     this.productService.getProducts()
@@ -56,13 +60,20 @@ export class CartComponent implements OnInit {
         this.cartProducts.splice(i, 1);
         this.productService.cartProducts.splice(i, 1);
         localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
+        this.toastr.warning('Product has been deleted','Attention!');
       }
     }
-    this.total()
+    this.total();
+    this.isEmpty();
     console.log(this.cartProducts);
   }
   discountClick(){
     this.discount = true;
+  }
+  isEmpty(){
+    if(this.cartProducts.length == 0){
+      this.noProducts=true;
+    }
   }
 
 }

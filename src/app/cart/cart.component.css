@@ -110,5 +110,17 @@ a:hover fa-icon  {
     background-color: cornflowerblue !important;
     color: white;
   }
-  
-  
+.price{
+    font-weight: bolder;
+    font-size: large;
+    margin: auto;
+    width: 50%;
+    margin: auto;
+}
+.emptyText  {
+    text-align: center;
+}
+.gif{
+    width: 150px;
+    margin-bottom: -20px;
+}

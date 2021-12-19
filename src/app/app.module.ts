@@ -9,7 +9,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';;
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ import { CartComponent } from './cart/cart.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { OrderByPipe } from './order-by.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { OrderByPipe } from './order-by.pipe';
     MatButtonModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatBadgeModule,
+    ToastrModule.forRoot(),
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
