@@ -1,0 +1,20 @@
+version: 0.2
+env:
+  variables:
+    BUILD_ENV: "prod"
+phases:
+  install:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install -g @angular/cli
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build --${BUILD_ENV}
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/pixieTemplate*'
+  discard-paths: yes
