@@ -37,10 +37,10 @@ export class ProductsComponent implements OnInit {
 
   getProducts():void {
     this.productService.getProducts()
-      .subscribe(products =>{
-        this.products = products;
-      });
-    this.productSlice = this.products.slice(0,12)
+        .subscribe(products=> {
+          this.products = products;
+          this.productSlice = this.products.slice(0,12)
+        });
   }
   OnPageChange(event:PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
@@ -85,13 +85,31 @@ export class ProductsComponent implements OnInit {
   returnLength(){
     return this.cartProducts.length
   }
+  paginatorLength(){
+    return this.products?.length
+  }
 
+}
+
+// export class Product {
+//   id: number;
+//   name: string;
+//   description: string;
+//   imageUrl: string;
+//   price:number;
+// }
+
+export interface Photo {
+  id: number;
+  path: string;
 }
 
 export class Product {
+  categories: string;
   id: number;
-  name: string;
-  description: string;
-  imageUrl: string;
-  price:number;
+  photos: Photo[];
+  price: number;
+  subtitle: string;
+  title: string;
 }
+

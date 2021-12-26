@@ -43,12 +43,12 @@
 
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div *ngFor="let product of products.slice(0,4)"     class="col mb-5">
+                <div *ngFor="let product of products?.slice(0,4)"     class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.name}}</h5>
-                        <p class="card-text">{{product.description}}</p>
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <p class="card-text">{{product.subtitle}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
@@ -65,12 +65,12 @@
 
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div *ngFor="let product of products.slice(4,8)" class="col mb-5">
+                <div *ngFor="let product of products?.slice(4,8)" class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.name}}</h5>
-                        <p class="card-text">{{product.description}}</p>
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <p class="card-text">{{product.subtitle}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
@@ -88,12 +88,12 @@
 
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
+                <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.name}}</h5>
-                        <p class="card-text">{{product.description}}</p>
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <p class="card-text">{{product.subtitle}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>

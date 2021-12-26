@@ -17,13 +17,13 @@
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/assets/images/{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -43,9 +43,9 @@
 
         <div class="col-md-6">
           <div class="right-content">
-            <h4>{{product.name}}</h4>
-            <h6>{{product.price}} ₺</h6>
-            <p>Description: {{product.description}}</p>
+            <h4>{{product?.title}}</h4>
+            <h6>{{product?.price}} ₺</h6>
+            <p>Description: {{product?.subtitle}}</p>
             <span>7 left on stock</span>
             <form action="" method="get">
               <label for="quantity">Quantity:</label>
@@ -103,12 +103,12 @@
 
           <div class="container">
             <div class="row row-cols-1 row-cols-md-4 g-4">
-              <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
+              <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
                 <div routerLink='/detail/{{product.id}}' class="card">
-                    <img src="/assets/images/{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">{{product.description}}</p>
+                      <h5 class="card-title">{{product.title}}</h5>
+                      <p class="card-text">{{product.subtitle}}</p>
                     </div>
                     <div class="card-footer">
                       <strong class="price">{{product.price}}₺ </strong>

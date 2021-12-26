@@ -1,23 +1,24 @@
-import { ProductData } from './products/products.datasource';
 import { Product } from './products/products.component';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   cartProducts:Product[]= [];
+  data:Product[]=[];
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 
-  getProducts(): Observable<Product[]> {
-    return of(ProductData);
+  public getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`http://spring-shop.eu-central-1.elasticbeanstalk.com/products/`);
   }
 
   getProduct(id:number): Observable<Product>{
-    return of(ProductData.find(product => product.id === id));
+    return this.http.get<Product>(`http://spring-shop.eu-central-1.elasticbeanstalk.com/products/`+'/'+id);
   }
   addToCart(product:Product):void{
     this.cartProducts = JSON.parse(localStorage.getItem('cartProducts'))
