@@ -10,13 +10,13 @@ import { StepperComponent } from './stepper/stepper.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'detail/:id', component: DetailComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'stepper', component: StepperComponent }
+  { path: '', component: HomeComponent, pathMatch:'full', },
+  { path: 'about', component: AboutComponent , pathMatch:'full' },
+  { path: 'contact', component: ContactComponent , pathMatch:'full' },
+  { path: 'products', component: ProductsComponent , pathMatch:'full'},
+  { path: 'detail/:id', component: DetailComponent , pathMatch:'full'},
+  { path: 'cart', component: CartComponent , pathMatch:'full'},
+  { path: 'stepper', component: StepperComponent , pathMatch:'full'}
 ]
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Router } from '@angular/router' ;
 import { Component, OnInit } from '@angular/core';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'navbar',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isActive:boolean = true;
+  faCartPlus = faCartPlus;
 
 
   constructor(public router:Router) { }

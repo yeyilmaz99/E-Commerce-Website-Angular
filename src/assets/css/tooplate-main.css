@@ -442,20 +442,6 @@ a {
 
 
 /* Single Product Style */
-.single-product .product-slider {
-	padding: 20px;
-	border: 1px solid #eee!important;
-	border-radius: 5px;
-}
-.flexslider {
-	border: none!important;
-}
-#carousel {
-	margin-top: 20px;
-}
-#carousel .slides li {
-	width: 150px!important;
-}
 .single-product .right-content h4 {
 	font-size: 17px;
 	font-weight: 700;
