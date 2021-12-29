@@ -47,8 +47,8 @@
                   <div routerLink='/detail/{{product.id}}' class="card">
                       <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.title}}</h5>
-                        <p class="card-text">{{product.subtitle}}</p>
+                        <h5 class="card-title text-truncate">{{product.title}}</h5>
+                        <p class="card-text text-truncate">{{product.subtitle}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
@@ -69,8 +69,8 @@
                   <div routerLink='/detail/{{product.id}}' class="card">
                       <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.title}}</h5>
-                        <p class="card-text">{{product.subtitle}}</p>
+                        <h5 class="card-title">{{product.title.substr(0,25).concat('...')}}</h5>
+                        <p class="card-text">{{product.subtitle.substr(0,35).concat('...')}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>
@@ -92,8 +92,8 @@
                   <div routerLink='/detail/{{product.id}}' class="card">
                       <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{product.title}}</h5>
-                        <p class="card-text">{{product.subtitle}}</p>
+                        <h5 class="card-title">{{product.title.substr(0,25).concat('...')}}</h5>
+                        <p class="card-text">{{product.subtitle.substr(0,35).concat('...')}}</p>
                       </div>
                       <div class="card-footer">
                         <strong>{{product.price}}₺ </strong>

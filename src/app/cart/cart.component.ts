@@ -39,8 +39,10 @@ export class CartComponent implements OnInit {
       });
   }
   saveToCart(product:Product){
-    this.productService.addToCart(product)
-    this.cartProducts.push(product)
+    this.productService.addToCart(product);
+    this.cartProducts.push(product);
+    this.total();
+    this.isEmpty();
   }
   total():void{
     let total = 0;
@@ -65,7 +67,6 @@ export class CartComponent implements OnInit {
     }
     this.total();
     this.isEmpty();
-    console.log(this.cartProducts);
   }
   discountClick(){
     this.discount = true;
@@ -73,6 +74,8 @@ export class CartComponent implements OnInit {
   isEmpty(){
     if(this.cartProducts.length == 0){
       this.noProducts=true;
+    }else{
+      this.noProducts=false;
     }
   }
 

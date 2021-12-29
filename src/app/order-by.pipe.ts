@@ -10,7 +10,6 @@ import { Product } from './products/products.component';
 export class OrderByPipe implements PipeTransform {
   transform(value: Product[] , sortBy: any, order?: any): any[] {
     const sortOrder = order ? order : ''; // setting default ascending order
-   
      return orderBy(value, [sortBy], [sortOrder]);
      }
    }

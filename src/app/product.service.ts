@@ -23,10 +23,8 @@ export class ProductService {
   addToCart(product:Product):void{
     this.cartProducts = JSON.parse(localStorage.getItem('cartProducts'))
     this.cartProducts.push(product);
-    console.log(this.cartProducts)
     if(localStorage.getItem("cartProducts") !== "true" ){
       localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
     }
-    
   }
 }

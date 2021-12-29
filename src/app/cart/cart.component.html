@@ -12,12 +12,12 @@
             <div class="card mb-3 productCard" *ngFor="let product of cartProducts">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="" class="img-fluid card-img rounded" alt="...">
+                  <img routerLink='/detail/{{product.id}}' src="{{product?.photos[0].path}}" class="img-fluid card-img rounded" alt="...">
                 </div>
                 <div class="col-md-7">
-                  <div class="card-body">
+                  <div routerLink='/detail/{{product.id}}' class="card-body">
                     <h5 class="card-title">{{product.title}}</h5>
-                    <p class="card-text">description: {{product.subtitle}} </p>
+                    <p class="card-text">{{product.subtitle}} </p>
                     <h3 class="card-text"><small class="text-muted">{{product.price}}₺</small></h3>
                   </div>
                 </div>
@@ -42,7 +42,7 @@
                     <p class="p">Items:</p>
                     <ul class="p">
                       <li class="itemsList" *ngFor="let product of cartProducts">
-                        <a routerLink='/detail/{{product.id}}'>{{product.title}}</a>
+                        <a routerLink='/detail/{{product.id}}'><p class="text-truncate">{{product.title}}</p></a>
                       </li>
                     </ul>
                     <p class="p">Total: {{totalPrice+10*15}}₺ </p>
@@ -78,12 +78,12 @@
   
             <div class="container">
               <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div *ngFor="let product of products.slice(8,12)" class="col mb-5">
+                <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
                   <div class="card">
-                      <img routerLink='/detail/{{product.id}}' src="" class="card-img-top" alt="...">
+                      <img routerLink='/detail/{{product.id}}' src="{{product?.photos[0].path}}"  class="card-img-top" alt="...">
                       <div routerLink='/detail/{{product.id}}' class="card-body">
-                        <h5 class="card-title">{{product.title}}</h5>
-                        <p class="card-text">{{product.subtitle}}</p>
+                        <h5 class="card-title text-truncate">{{product.title}}</h5>
+                        <p class="card-text text-truncate">{{product.subtitle}}</p>
                       </div>
                       <div class="card-footer">
                         <strong class="price">{{product.price}}₺ </strong>

@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts()
         .subscribe(products=> {
           this.products = products;
-          this.productSlice = this.products.slice(0,12)
+          this.productSlice = this.products.slice(0,12)          
         });
   }
   OnPageChange(event:PageEvent) {
@@ -52,28 +52,24 @@ export class ProductsComponent implements OnInit {
   }
   onSelect(product:Product):void{
     this.selectedProduct = product
-    console.log("productid"+product.id)
   }
 
 
   sortHigh(){
     this.products= this.order.transform(this.products,'price','desc')
     this.productSlice = this.products.slice(0,12);
-    console.log(this.productSlice)
     this.paginator.firstPage();
   }
 
   sortLow(){
     this.products= this.order.transform(this.products,'price','asc')
     this.productSlice = this.products.slice(0,12)
-    console.log(this.productSlice)
     this.paginator.firstPage();
   }
 
   sortAll(){
     this.products= this.order.transform(this.products,'id','asc')
     this.productSlice = this.products.slice(0,12)
-    console.log(this.productSlice)
     this.paginator.firstPage();
   }
   addToCart(product:Product){
