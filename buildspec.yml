@@ -16,5 +16,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist/pixieTemplate*'
+  base-directory: 'dist/MYSHOP*'
   discard-paths: yes

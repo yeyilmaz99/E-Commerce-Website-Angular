@@ -30,6 +30,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { OrderByPipe } from './order-by.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CartComponent,
     StepperComponent,
     OrderByPipe,
+    SubscribeFormComponent,
   ],
   imports: [
     BrowserModule,
