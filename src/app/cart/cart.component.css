@@ -77,6 +77,34 @@ a:hover fa-icon  {
         margin-bottom: 20px;
     }
   }
+@media only screen and (max-width:1399px) {
+    .text-truncate{
+        width: 170px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+}
+@media only screen and (max-width:1199px) {
+    .text-truncate{
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+}
+@media only screen and (max-width:991px) {
+    .text-truncate{
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+}
+
 
 .p{
     margin-bottom: 3px;
