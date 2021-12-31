@@ -20,10 +20,13 @@
                 <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
+                <img src="{{product?.photos[1].path}}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="...">
+                <img src="{{product?.photos[2].path}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{product?.photos[3].path}}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -107,8 +110,8 @@
                 <div routerLink='/detail/{{product.id}}' class="card">
                     <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{product.title}}</h5>
-                      <p class="card-text">{{product.subtitle}}</p>
+                      <h5 class="card-title text-truncate">{{product.title}}</h5>
+                      <p class="card-text text-truncate">{{product.subtitle}}</p>
                     </div>
                     <div class="card-footer">
                       <strong class="price">{{product.price}}₺ </strong>
