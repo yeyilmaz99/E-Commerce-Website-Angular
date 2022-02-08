@@ -27,6 +27,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@sweetalert2/ngx-sweetalert2": "^10.0.0",
+    "angular-in-memory-web-api": "^0.13.0",
     "bootstrap": "^5.1.3",
     "lodash": "^4.17.21",
     "ngx-toastr": "^14.2.1",

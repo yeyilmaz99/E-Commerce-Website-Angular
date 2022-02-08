@@ -45,10 +45,13 @@
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products?.slice(0,4)"     class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
+                      <!-- <img src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
+                      <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title text-truncate">{{product.title}}</h5>
-                        <p class="card-text text-truncate">{{product.subtitle}}</p>
+                        <!-- <h5 class="card-title text-truncate">{{product.title}}</h5> -->
+                        <h5 class="card-title text-truncate">{{product.name}}</h5>
+                        <!-- <p class="card-text text-truncate">{{product.subtitle}}</p> -->
+                        <p class="card-text text-truncate">{{product.description}}</p>
                       </div>
                       <div class="card-footer">
                         <strong class="price">{{product.price}}₺ </strong>
@@ -67,10 +70,13 @@
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products?.slice(4,8)" class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
+                      <!-- <img src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
+                      <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title text-truncate">{{product.title.substr(0,25).concat('...')}}</h5>
-                        <p class="card-text text-truncate">{{product.subtitle.substr(0,35).concat('...')}}</p>
+                        <!-- <h5 class="card-title text-truncate">{{product.title}}</h5> -->
+                        <h5 class="card-title text-truncate">{{product.name}}</h5>
+                        <!-- <p class="card-text text-truncate">{{product.subtitle}}</p> -->
+                        <p class="card-text text-truncate">{{product.description}}</p>
                       </div>
                       <div class="card-footer">
                         <strong class="price">{{product.price}}₺ </strong>
@@ -90,10 +96,13 @@
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
                   <div routerLink='/detail/{{product.id}}' class="card">
-                      <img src="{{product.photos[0].path}}" class="card-img-top" alt="...">
+                      <!-- <img src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
+                      <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title text-truncate">{{product.title.substr(0,25).concat('...')}}</h5>
-                        <p class="card-text text-truncate">{{product.subtitle.substr(0,35).concat('...')}}</p>
+                        <!-- <h5 class="card-title text-truncate">{{product.title}}</h5> -->
+                        <h5 class="card-title text-truncate">{{product.name}}</h5>
+                        <!-- <p class="card-text text-truncate">{{product.subtitle}}</p> -->
+                        <p class="card-text text-truncate">{{product.description}}</p>
                       </div>
                       <div class="card-footer">
                         <strong class="price">{{product.price}}₺ </strong>
