@@ -15,7 +15,6 @@ export class ProductService {
 
   public getProducts(): Observable<Product[]> {
     // return this.http.get<Product[]>(`http://spring-shop.eu-central-1.elasticbeanstalk.com/products/`);
-     console.log(this.http.get<Product[]>(this.apiProductsUrl))
       return this.http.get<Product[]>(this.apiProductsUrl);
 
   }

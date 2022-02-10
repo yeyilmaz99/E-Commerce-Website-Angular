@@ -35,8 +35,11 @@
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active" [routerLink]="['/contact']">Contact Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" [routerLink]="['/cart']">Cart<fa-icon [icon]="faCartPlus"></fa-icon></a>
+            <li *ngIf="counter | async as c" class="nav-item">
+              <a matBadge='{{c.count}}' matBadgeColor="primary" class="nav-link" routerLinkActive="active" [routerLink]="['/cart']">Cart<fa-icon [icon]="faCartPlus"></fa-icon></a>
+              
+
+
             </li>
           </ul>
         </div>

@@ -5,6 +5,18 @@ import { Product } from '../products/products.component';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import * as CounterActions from '../actions/counter.actions';
+import { Counter } from '../models/counter.model';
+
+
+interface AppState{
+  counter:Counter
+}
+
+
 @Component({
   selector: 'cart',
   templateUrl: './cart.component.html',
@@ -19,13 +31,15 @@ export class CartComponent implements OnInit {
   cargoPrice:number = 10;
   discount:Boolean =false;
   noProducts:boolean;
+  counter:Observable<Counter>
 
 
   constructor(
+    private store:Store<AppState>,
     private productService:ProductService,
     private http:HttpClient,
     private toastr:ToastrService
-  ) { }
+  ) { this.counter = this.store.select('counter'); }
 
   ngOnInit(): void {
     this.getProducts();
@@ -67,6 +81,7 @@ export class CartComponent implements OnInit {
     }
     this.total();
     this.isEmpty();
+    this.downvote();
   }
   discountClick(){
     this.discount = true;
@@ -77,6 +92,9 @@ export class CartComponent implements OnInit {
     }else{
       this.noProducts=false;
     }
+  }
+  downvote(){
+    this.store.dispatch(new CounterActions.Downvote());
   }
 
 }

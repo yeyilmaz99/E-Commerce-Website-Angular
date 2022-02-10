@@ -13,7 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatBadgeModule } from '@angular/material/badge';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-
+import { StoreModule } from '@ngrx/store';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +34,8 @@ import { OrderByPipe } from './order-by.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
+
+import { counterReducer } from './reducers/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -72,7 +74,8 @@ import { SubscribeFormComponent } from './subscribe-form/subscribe-form.componen
     MatNativeDateModule,
     MatBadgeModule,
     ToastrModule.forRoot(),
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    StoreModule.forRoot({ counter: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

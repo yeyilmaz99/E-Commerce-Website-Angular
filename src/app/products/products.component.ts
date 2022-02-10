@@ -6,6 +6,16 @@ import { MatPaginator } from '@angular/material/paginator';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import * as CounterActions from '../actions/counter.actions';
+import { Counter } from '../models/counter.model';
+
+interface AppState{
+  counter:Counter
+}
+
 
 @Component({
   selector: 'app-products',
@@ -24,12 +34,15 @@ export class ProductsComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageEvent: PageEvent;
   badgeContent: number;
+  counter:Observable<Counter>
 
   constructor(
+    private store:Store<AppState>,
     private productService:ProductService, 
     private order:OrderByPipe,
     ) {
       this.badgeContent = this.cartProducts.length
+      this.counter = this.store.select('counter');
     }
   ngOnInit(): void {
     this.getProducts();
@@ -77,6 +90,7 @@ export class ProductsComponent implements OnInit {
     this.cartProducts= JSON.parse(localStorage.getItem("cartProducts"));
     this.badgeContent = this.cartProducts.length;
     Swal.fire('Whooa', 'Product has been added to cart', 'success');
+    this.upvote();
   }
   returnLength(){
     return this.cartProducts.length
@@ -84,6 +98,14 @@ export class ProductsComponent implements OnInit {
   paginatorLength(){
     return this.products?.length
   }
+
+  upvote(){
+    this.store.dispatch(new CounterActions.Upvote());
+  }
+  downvote(){
+    this.store.dispatch(new CounterActions.Downvote());
+  }
+
 
 }
 
