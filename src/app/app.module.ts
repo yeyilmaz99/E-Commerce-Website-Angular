@@ -12,7 +12,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatBadgeModule } from '@angular/material/badge';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
 
 
@@ -56,9 +55,6 @@ import { counterReducer } from './reducers/counter.reducer';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation:false}
-    ),
     MatStepperModule,
     MatFormFieldModule,
     FormsModule,

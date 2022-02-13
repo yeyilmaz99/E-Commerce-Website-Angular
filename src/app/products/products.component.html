@@ -15,7 +15,6 @@
           <!-- <button class="btn btn-primary" data-filter=".new">Newest</button> -->
           <button class="btn btn-primary" (click)="sortLow()" data-filter=".low">Low Price</button>
           <button class="btn btn-primary" (click)="sortHigh()" data-filter=".high">Hight Price</button>
-          <a [matBadge]="badgeContent" matBadgeColor="primary" class="btn btn-primary" [routerLink]="['/cart']">Cart<fa-icon [icon]="faCartPlus"></fa-icon></a>
         </div>
       </div>
     </div>
@@ -27,12 +26,10 @@
     <div *ngFor="let product of productSlice"  class="col">
       <div class="card">
           <!-- <img routerLink='/detail/{{product.id}}' src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
-          <img routerLink='/detail/{{product.id}}' src="{{product.imageUrl}}" class="card-img-top" alt="...">
+          <img routerLink='/detail/{{product.id}}' src="assets/images/product6.jpg" class="card-img-top" alt="...">
           <div routerLink='/detail/{{product.id}}' class="card-body">
-            <!-- <h5 class="card-title text-truncate">{{product.title}}</h5> -->
-            <h5 class="card-title text-truncate">{{product.name}}</h5>
-            <!-- <p class="card-text text-truncate">{{product.subtitle}}</p> -->
-            <p class="card-text text-truncate">{{product.description}}</p>
+            <h5 class="card-title text-truncate">{{product.title}}</h5>
+            <p class="card-text text-truncate">{{product.subtitle}}</p>
           </div>
           <div class="card-footer">
             <strong class="price">{{product.price}}₺ </strong>

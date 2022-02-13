@@ -18,19 +18,20 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <!-- <img src="{{product?.photos[0].path}}" class="d-block w-100" alt="..."> -->
-                <img src="{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="assets/images/product6.jpg" class="d-block w-100" alt="...">
+                
               </div>
               <div class="carousel-item">
                 <!-- <img src="{{product?.photos[1].path}}" class="d-block w-100" alt="..."> -->
-                <img src="{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="assets/images/product6.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <!-- <img src="{{product?.photos[2].path}}" class="d-block w-100" alt="..."> -->
-                <img src="{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="assets/images/product6.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <!-- <img src="{{product?.photos[3].path}}" class="d-block w-100" alt="..."> -->
-                <img src="{{product.imageUrl}}" class="d-block w-100" alt="...">
+                <img src="assets/images/product6.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -50,12 +51,9 @@
 
         <div class="col-md-6">
           <div class="right-content">
-            <h4>{{product?.name}}</h4>
-            <!-- <h4>{{product?.title}}</h4> -->
-            <!-- <h6>{{product?.price}} ₺</h6> -->
+            <h4>{{product?.title}}</h4>
             <h6>{{product?.price}} ₺</h6>
-            <!-- <p>Description: {{product?.subtitle}}</p> -->
-            <p>Description: {{product?.description}}</p>
+            <p>Description: {{product?.subtitle}}</p>
             <span>7 left on stock</span>
             <form action="" method="get">
               <label for="quantity">Quantity:</label>
@@ -116,12 +114,10 @@
               <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
                 <div routerLink='/detail/{{product.id}}' class="card">
                     <!-- <img src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
-                    <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <img src="assets/images/product6.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title text-truncate">{{product.name}}</h5>
-                      <!-- <h5 class="card-title text-truncate">{{product.title}}</h5> -->
-                      <p class="card-text text-truncate">{{product.description}}</p>
-                      <!-- <p class="card-text text-truncate">{{product.subtitle}}</p> -->
+                      <h5 class="card-title text-truncate">{{product.title}}</h5>
+                      <p class="card-text text-truncate">{{product.subtitle}}</p>
                     </div>
                     <div class="card-footer">
                       <strong class="price">{{product.price}}₺ </strong>

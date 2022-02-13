@@ -14,14 +14,14 @@ export class ProductService {
 
 
   public getProducts(): Observable<Product[]> {
-    // return this.http.get<Product[]>(`http://spring-shop.eu-central-1.elasticbeanstalk.com/products/`);
-      return this.http.get<Product[]>(this.apiProductsUrl);
+    return this.http.get<Product[]>(`http://api.myshopapp.tk/v1/products`);
+      // return this.http.get<Product[]>(this.apiProductsUrl);
 
   }
 
   getProduct(id:number): Observable<Product>{
-    // return this.http.get<Product>(`http://spring-shop.eu-central-1.elasticbeanstalk.com/products/`+'/'+id);
-    return this.http.get<Product>(this.apiProductsUrl+'/'+id);
+    return this.http.get<Product>(`http://api.myshopapp.tk/v1/products/`+'/'+id);
+    // return this.http.get<Product>(this.apiProductsUrl+'/'+id);
   }
   addToCart(product:Product):void{
     this.cartProducts = JSON.parse(localStorage.getItem('cartProducts'))

@@ -1,10 +1,13 @@
 import * as CounterActions from '../actions/counter.actions';
 import { Counter } from '../models/counter.model';
+import { Product } from '../products/products.component';
 
 export type Action = CounterActions.All;
 
+const cartProducts: Product[]= JSON.parse(localStorage.getItem("cartProducts"));
+
 const defaultState: Counter = {
-    count: 0
+    count: cartProducts.length
 }
 
 const newState = (state,newData) => {

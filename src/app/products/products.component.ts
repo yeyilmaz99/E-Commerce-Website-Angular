@@ -122,21 +122,14 @@ export interface Photo {
   path: string;
 }
 
-// export interface Product {
-//   categories: string;
-//   id: number;
-//   photos: Photo[];
-//   price: number;
-//   subtitle: string;
-//   title: string;
-// }
-
-export class Product {
-  name:string;
-  id:number;
-  description:string;
-  imageUrl:string;
-  price:number;
+export interface Product {
+  categories: string;
+  id: number;
+  photos: Photo[];
+  price: number;
+  subtitle: string;
+  title: string;
 }
+
 
 
