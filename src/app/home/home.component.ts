@@ -9,18 +9,18 @@ import { ProductService } from '../product.service';
 export class HomeComponent implements OnInit  {
   selectedProduct:Product;
 
-  products:Product[];
+  products: Product[]= JSON.parse(localStorage.getItem('products'));
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-   this.getProducts()
+  //  this.getProducts()
   }
-  getProducts():void {
-    this.productService.getProducts()
-        .subscribe(products=> {
-          this.products = products;
-        });
-  }
+  // getProducts():void {
+  //   this.productService.getProducts()
+  //       .subscribe(products=> {
+  //         this.products = products;
+  //       });
+  // }
 
   onSelect(product:Product):void{
     this.selectedProduct = product
