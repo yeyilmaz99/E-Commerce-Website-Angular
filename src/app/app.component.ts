@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.scrollToTop();
     this.createCartProductList();
-    this.getProducts();
   }
 
   scrollToTop(): void {
@@ -39,15 +38,15 @@ export class AppComponent implements OnInit {
   createProductList(){
 
   }
-  getProducts():void {
-    if(localStorage.getItem('products')==null) {
-      this.products = [];
-      this.productService.getProducts()
-      .subscribe(products=> {
-        this.products = products;
-        localStorage.setItem("products",JSON.stringify(this.products));
-      });
-    }
+  // getProducts():void {
+  //   if(localStorage.getItem('products')==null) {
+  //     this.products = [];
+  //     this.productService.getProducts()
+  //     .subscribe(products=> {
+  //       this.products = products;
+  //       localStorage.setItem("products",JSON.stringify(this.products));
+  //     });
+  //   }
 
-  }
+  // }
 }
