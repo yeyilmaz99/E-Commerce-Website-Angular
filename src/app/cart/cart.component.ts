@@ -33,6 +33,7 @@ export class CartComponent implements OnInit {
   discount: Boolean = false;
   noProducts: boolean;
   counter: Observable<Counter>
+  dataLoaded: boolean;
 
 
   constructor(
@@ -47,11 +48,11 @@ export class CartComponent implements OnInit {
     this.total();
     this.isEmpty();
   }
-  getProducts(): void {
-    this.productService.getProducts()
-      .subscribe(products => {
-        this.products = products;
-      });
+  getProducts() {
+    this.productService.getProducts().subscribe((response) => {
+      this.products = response.data;
+      this.dataLoaded = true;
+    });
   }
   saveToCart(product: Product) {
     this.productService.addToCart(product);
@@ -64,7 +65,7 @@ export class CartComponent implements OnInit {
   total(): void {
     let total = 0;
     for (let product of this.cartProducts) {
-      total += product.price;
+      total += product.unitPrice;
     }
     this.totalPrice = total;
     this.totalPriceDollar = Math.round(this.totalPrice / 14.82);
@@ -76,7 +77,7 @@ export class CartComponent implements OnInit {
   delete(product: Product): void {
     
     for (let i = 0; i < this.cartProducts.length; i++) {
-      if (this.cartProducts[i].id === product.id) {
+      if (this.cartProducts[i].productId === product.productId) {
         this.cartProducts.splice(i, 1);
         this.productService.cartProducts.splice(i, 1);
         localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
@@ -116,7 +117,7 @@ export class CartComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         for (let i = 0; i < this.cartProducts.length; i++) {
-          if (this.cartProducts[i].id === product.id) {
+          if (this.cartProducts[i].productId === product.productId) {
             this.cartProducts.splice(i, 1);
             this.productService.cartProducts.splice(i, 1);
             localStorage.setItem("cartProducts", JSON.stringify(this.cartProducts));
