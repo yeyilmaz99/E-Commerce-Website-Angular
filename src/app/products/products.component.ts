@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   cartProducts: Product[] = JSON.parse(localStorage.getItem("cartProducts"));
   selectedProduct:Product;
-  products: Product[]= JSON.parse(localStorage.getItem('products'));
+  // products: Product[]= JSON.parse(localStorage.getItem('products'));
   productSlice:Product[] = JSON.parse(localStorage.getItem('products')).slice(0,12);
   length = 100;
   pageSize = 10;
@@ -35,6 +35,9 @@ export class ProductsComponent implements OnInit {
   pageEvent: PageEvent;
   badgeContent: number;
   counter:Observable<Counter>
+
+  products: Product[] = [];
+  dataLoaded: boolean = false;
 
   constructor(
     private store:Store<AppState>,
@@ -45,19 +48,18 @@ export class ProductsComponent implements OnInit {
       this.counter = this.store.select('counter');
     }
   ngOnInit(): void {
-    // this.getProducts();
+    this.getProducts();
   }
 
   // getProducts():void{
   //   this.products = JSON.parse(localStorage.getItem("products"));
   // }
-
-  // getProducts():void {
-  //   JSON.parse(localStorage.getItem('products')).subscribe(products =>{
-  //     this.products = products;
-  //     this.productSlice = this.products.slice(0,12)   
-  //   });
-  // }
+  getProducts() {
+    this.productService.getProducts().subscribe((response) => {
+      this.products = response.data;
+      this.dataLoaded = true;
+    });
+  }
   OnPageChange(event:PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
     let endIndex = startIndex + event.pageSize;
@@ -126,12 +128,11 @@ export interface Photo {
 }
 
 export interface Product {
-  categories: string;
-  id: number;
-  photos: Photo[];
-  price: number;
-  subtitle: string;
-  title: string;
+  productId: number,
+  categoryId: number,
+  productName: string,
+  unitsInStock: number,
+  unitPrice: number
 }
 
 
