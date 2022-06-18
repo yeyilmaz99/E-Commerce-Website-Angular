@@ -51,9 +51,8 @@
 
         <div class="col-md-6">
           <div class="right-content">
-            <h4>{{product?.title}}</h4>
-            <h6>{{product?.price}} ₺</h6>
-            <p>Description: {{product?.subtitle}}</p>
+            <h4>{{product?.productName}}</h4>
+            <h6>{{product?.unitPrice}} ₺</h6>
             <span>7 left on stock</span>
             <form action="" method="get">
               <label for="quantity">Quantity:</label>
@@ -112,15 +111,14 @@
           <div class="container">
             <div class="row row-cols-1 row-cols-md-4 g-4">
               <div *ngFor="let product of products?.slice(8,12)" class="col mb-5">
-                <div routerLink='/detail/{{product.id}}' class="card">
+                <div routerLink='/detail/{{product.productId}}' class="card">
                     <!-- <img src="{{product.photos[0].path}}" class="card-img-top" alt="..."> -->
                     <img src="assets/images/product6.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title text-truncate">{{product.title}}</h5>
-                      <p class="card-text text-truncate">{{product.subtitle}}</p>
+                      <h5 class="card-title text-truncate">{{product.productName}}</h5>
                     </div>
                     <div class="card-footer">
-                      <strong class="price">{{product.price}}₺ </strong>
+                      <strong class="price">{{product.unitPrice}}₺ </strong>
                       <button class="addToCartButton btn" (click)="addToCart(product)" >Add To Cart</button>
                     </div>
                 </div>
