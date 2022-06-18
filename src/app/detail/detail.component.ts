@@ -27,6 +27,7 @@ export class DetailComponent implements OnInit {
   faCartPlus= faCartPlus;
   cartProducts: Product[] = JSON.parse(localStorage.getItem("cartProducts"));
   products:Product[];
+  dataLoaded: boolean;
   counter:Observable<Counter>
   @Input() product: Product
   constructor(
@@ -58,11 +59,11 @@ export class DetailComponent implements OnInit {
       .subscribe((product) => this.product = product)
 
   }
-  getProducts():void {
-    this.productService.getProducts()
-      .subscribe(products =>{
-        this.products = products;
-      });
+  getProducts() {
+    this.productService.getProducts().subscribe((response) => {
+      this.products = response.data;
+      this.dataLoaded = true;
+    });
   }
   addToCart(product:Product){
     this.productService.addToCart(product)
